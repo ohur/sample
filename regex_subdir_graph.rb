@@ -18,7 +18,7 @@ require 'optparse'
 options = {}
 
 optparse = OptionParser.new do|opts|
-  opts.banner = "Usage: apple_code_exercise.rb --root_dir . --regexp '/log$/i'"
+  opts.banner = "Usage: regex_subdir_graph.rb --root_dir . --regexp '/log$/i'"
 
   options[:root_dir] = nil
   opts.on( '--root_dir ROOT_DIR', 'Root Directory' ) do |root_dir|
@@ -57,7 +57,7 @@ original_dir = Dir.pwd
 
 Dir.chdir("#{root_dir}")
 
-log = Logger.new("#{original_dir}/apple_code_exercise.txt")
+log = Logger.new("#{original_dir}/regex_subdir_graph.txt")
 log.debug "Looking for a match to the file name with /#{pattern}/#{modifier} "\
           "in the directory, #{root_dir}, and its sub directories."
 directories = Dir.glob("**/")
